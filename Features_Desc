@@ -1,0 +1,265 @@
+SEQN – Participant ID
+
+LBXGLU – Blood glucose (mg/dL)
+
+LBDGLUSI – Blood glucose (mmol/L)
+
+PHAFSTHR – Hours fasted
+
+PHAFSTMN – Minutes fasted
+
+LBXGLT – Glucose tolerance test (mg/dL)
+
+LBDGLTSI – Glucose tolerance test (mmol/L)
+
+GTDSCMMN – Time since consuming drink (min)
+
+GTDDR1MN – Time after first drink (min)
+
+GTDBL2MN – Time before 2nd draw (min)
+
+GTDDR2MN – Time after second drink (min)
+
+LBXIN – Insulin (µU/mL)
+
+LBDINSI – Insulin (pmol/L)
+
+LBDINLC – Insulin comment code
+
+LBXGH – Glycohemoglobin (%)
+
+LBXTC – Total cholesterol (mg/dL)
+
+LBDTCSI – Total cholesterol (mmol/L)
+
+LBDHDD – HDL cholesterol (mg/dL)
+
+LBDHDDSI – HDL cholesterol (mmol/L)
+
+LBXTR – Triglycerides (mg/dL)
+
+LBDTRSI – Triglycerides (mmol/L)
+
+LBDLDL – LDL cholesterol (mg/dL)
+
+LBDLDLSI – LDL cholesterol (mmol/L)
+
+LBXSAL – Albumin (g/dL)
+
+LBDSALSI – Albumin (g/L)
+
+LBXSATSI – Saturation (iron %)
+
+LBXSASSI – Aspartate aminotransferase (U/L)
+
+LBXSAPSI – Alkaline phosphatase (U/L)
+
+LBXSBU – Blood urea nitrogen (mg/dL)
+
+LBDSBUSI – BUN (mmol/L)
+
+LBXSCA – Calcium (mg/dL)
+
+LBDSCASI – Calcium (mmol/L)
+
+LBXSCH – Cholesterol (mg/dL)
+
+LBDSCHSI – Cholesterol (mmol/L)
+
+LBXSC3SI – Cholesterol subfraction (mmol/L)
+
+LBXSCR – Creatinine (mg/dL)
+
+LBDSCRSI – Creatinine (µmol/L)
+
+LBXSGTSI – Glutamyl transferase (U/L)
+
+LBXSGL – Globulin (g/dL)
+
+LBDSGLSI – Globulin (g/L)
+
+LBXSIR – Iron (µg/dL)
+
+LBDIRSI – Iron (µmol/L)
+
+LBXSLDSI – Lactate dehydrogenase (U/L)
+
+LBXSPH – Phosphorus (mg/dL)
+
+LBDSPHSI – Phosphorus (mmol/L)
+
+LBXSTB – Total bilirubin (mg/dL)
+
+LBDSTBSI – Total bilirubin (µmol/L)
+
+LBXSTP – Total protein (g/dL)
+
+LBDSTPSI – Total protein (g/L)
+
+LBXSTR – Transthyretin (mg/dL)
+
+LBDSTRSI – Transthyretin (g/L)
+
+LBXSUA – Uric acid (mg/dL)
+
+LBDSUASI – Uric acid (µmol/L)
+
+LBXWBCSI – White blood cell count (10³/µL)
+
+LBXLYPCT – Lymphocytes (%)
+
+LBXMOPCT – Monocytes (%)
+
+LBXNEPCT – Neutrophils (%)
+
+LBXEOPCT – Eosinophils (%)
+
+LBXBAPCT – Basophils (%)
+
+LBDLYMNO – Lymphocyte number
+
+LBDMONO – Monocyte number
+
+LBDNENO – Neutrophil number
+
+LBDEONO – Eosinophil number
+
+LBDBANO – Basophil number
+
+LBXRBCSI – Red blood cell count (10⁶/µL)
+
+LBXHGB – Hemoglobin (g/dL)
+
+LBXHCT – Hematocrit (%)
+
+LBXMCVSI – Mean corpuscular volume (fL)
+
+LBXMCHSI – Mean corpuscular hemoglobin (pg)
+
+LBXMC – Mean corpuscular concentration (g/dL)
+
+LBXRDW – Red cell distribution width (%)
+
+LBXPLTSI – Platelet count (10³/µL)
+
+LBXMPSI – Mean platelet volume (fL)
+
+LBXFER – Ferritin (ng/mL)
+
+LBDFERSI – Ferritin (pmol/L)
+
+LBXTFR – Transferrin (mg/dL)
+
+LBDTFRSI – Transferrin (µmol/L)
+
+LBXHSCRP – High-sensitivity C-reactive protein (mg/L)
+
+LBDHRPLC – hsCRP comment code
+
+LBXCRP – C-reactive protein (mg/dL)
+
+URXUMA – Urinary albumin (mg/L)
+
+URXUMS – Urinary albumin (mg/L, alternate)
+
+URXUCR – Urinary creatinine (mg/dL)
+
+URXCRS – Urinary creatinine (mmol/L)
+
+URDACT – Urinary arsenic (µg/L)
+
+LBXATG – Antithyroglobulin antibody
+
+LBXT3F – Free T3 (pg/mL)
+
+LBXT4F – Free T4 (ng/dL)
+
+LBDT4FSI – Free T4 (pmol/L)
+
+LBXTGN – Thyroglobulin (ng/mL)
+
+LBDTGNSI – Thyroglobulin (pmol/L)
+
+LBXTSH1 – TSH (µIU/mL)
+
+LBDTSH1S – TSH (mIU/L)
+
+LBXTPO – Thyroid peroxidase antibody
+
+LBXTT3 – Total T3 (ng/dL)
+
+LBDTT3SI – Total T3 (nmol/L)
+
+LBXTT4 – Total T4 (µg/dL)
+
+LBXB12 – Vitamin B12 (pg/mL)
+
+LBDB12SI – Vitamin B12 (pmol/L)
+
+LBDRFO – Folate (ng/mL)
+
+LBDRFOSI – Folate (nmol/L)
+
+LBDFOTSI – Folate (serum, SI units)
+
+LBDFOT – Folate (serum)
+
+LBXSF1SI – Folate fraction 1 (nmol/L)
+
+LBDSF1LC – Folate fraction 1 comment code
+
+LBXSF2SI – Folate fraction 2 (nmol/L)
+
+LBDSF2LC – Folate fraction 2 comment code
+
+LBXSF3SI – Folate fraction 3 (nmol/L)
+
+LBDSF3LC – Folate fraction 3 comment code
+
+LBXSF4SI – Folate fraction 4 (nmol/L)
+
+LBDSF4LC – Folate fraction 4 comment code
+
+LBXSF5SI – Folate fraction 5 (nmol/L)
+
+LBDSF5LC – Folate fraction 5 comment code
+
+LBXSF6SI – Folate fraction 6 (nmol/L)
+
+LBDSF6LC – Folate fraction 6 comment code
+
+LBXBPB – Blood lead (µg/dL)
+
+LBDBPBSI – Blood lead (µmol/L)
+
+LBXBCD – Blood cadmium (µg/L)
+
+LBDBCDSI – Blood cadmium (µmol/L)
+
+LBXTHG – Blood mercury (µg/L)
+
+LBDTHGSI – Blood mercury (µmol/L)
+
+LBDTHGLC – Mercury comment code
+
+LBDBPBLC – Lead comment code
+
+LBDBCDLC – Cadmium comment code
+
+LBXVIDMS – Vitamin D total (ng/mL)
+
+LBDVIDLC – Vitamin D comment code
+
+LBXVD2MS – Vitamin D2 (ng/mL)
+
+LBDVD2LC – Vitamin D2 comment code
+
+LBXVD3MS – Vitamin D3 (ng/mL)
+
+LBDVD3LC – Vitamin D3 comment code
+
+LBXVE3MS – Vitamin E (µg/dL)
+
+LBDVE3LC – Vitamin E comment code
+
+PHDSESN – Session ID
