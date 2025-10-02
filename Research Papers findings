@@ -12,7 +12,7 @@ The study is a systematic review and meta-analysis of 37 studies evaluating diag
 - Oral Glucose Tolerance Test (OGTT) remains the gold standard reference for diagnosing T2D.
 - Random Plasma Glucose (RPG) can be used when fasting is not feasible, but is less accurate.
 - Adjusting diagnostic thresholds can improve early detection without greatly compromising accuracy.
-- Key implication: Using multiple biochemical markers (HbA1c, FPG) and optimized cut-offs enhances detection of diabetes and prediabetes.
+- Key implication: Using multiple biochemical markers (HbA1c, FPG) and optimized cut-offs enhances detection of diabetes.
 - The study supports the importance of balancing sensitivity and specificity in diagnostic testing.
 - These findings can guide feature selection and thresholding for predictive models for diabetes.
 
