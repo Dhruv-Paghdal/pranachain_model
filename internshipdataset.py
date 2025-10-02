@@ -11,23 +11,23 @@ from google.colab import files
 import zipfile
 import os
 
-# --- Step 1: Upload your zip ---
+
 uploaded = files.upload()
 
-# --- Step 2: Get the uploaded filename automatically ---
+Get the uploaded filename automatically ---
 zip_path = list(uploaded.keys())[0]
 print(f"✅ Uploaded file: {zip_path}")
 
-# --- Step 3: Unzip into a folder ---
+#--- Unzip into a folder ---
 extract_folder = "diabetes_csvs"
 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     zip_ref.extractall(extract_folder)
 
-# --- Step 4: Verify extraction ---
+# --- Verify extraction ---
 print("Extraction complete")
 print("Extracted files:", len(os.listdir(extract_folder)))
 
-# --- Install python-docx (only needed once per session) ---
+
 !pip install python-docx
 
 import pandas as pd
@@ -35,7 +35,7 @@ import glob
 import os
 from docx import Document
 
-# --- Path to your extracted CSV folder ---
+
 path = "diabetes_csvs"
 all_files = glob.glob(os.path.join(path, "*.csv"))
 
@@ -51,7 +51,7 @@ for file in all_files:
         df = pd.read_csv(file, nrows=5)   # Only first 5 rows for speed
         features = list(df.columns)
 
-        # Add file name with feature count
+        
         doc.add_heading(f"{os.path.basename(file)} ({len(features)} features)", level=2)
 
         # Add features as bullet list
