@@ -1,0 +1,26 @@
+Research papers:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC7678987/ 
+
+Findings:
+1. Biochemical Tests (Primary Predictors)
+
+The study is a systematic review and meta-analysis of 37 studies evaluating diagnostic tests for type 2 diabetes (T2D) and prediabetes.
+- Standard diagnostic cut-off (≥6.5%) is highly specific (97.3%) but moderately sensitive (50%).
+- Optimal lower cut-off (~6.03%) improves sensitivity to 73.9% with acceptable specificity (87.2%).
+- Fasting Plasma Glucose (FPG) test:
+- Optimal cut-off (~104 mg/dL) provides high sensitivity (82.3%) and specificity (89.4%).
+- Oral Glucose Tolerance Test (OGTT) remains the gold standard reference for diagnosing T2D.
+- Random Plasma Glucose (RPG) can be used when fasting is not feasible, but is less accurate.
+- Adjusting diagnostic thresholds can improve early detection without greatly compromising accuracy.
+- Key implication: Using multiple biochemical markers (HbA1c, FPG) and optimized cut-offs enhances detection of diabetes and prediabetes.
+- The study supports the importance of balancing sensitivity and specificity in diagnostic testing.
+- These findings can guide feature selection and thresholding for predictive models for diabetes.
+
+Commonly included in diabetes risk models:
+
+- Age – risk increases with age.
+- BMI / Obesity indicators – overweight/obese individuals are at higher risk.
+- Family history of diabetes – strong genetic component.
+- Hypertension / Blood pressure – often associated with insulin resistance.
+- Lipid profile – elevated triglycerides and low HDL may be risk markers.
+- Lifestyle factors – diet, physical activity, smoking, alcohol.
