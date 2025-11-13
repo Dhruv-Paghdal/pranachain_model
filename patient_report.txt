@@ -1,0 +1,14 @@
+age=58
+systolicBP=160
+diastolicBP=90
+fastingBloodSugar=140
+hbA1c=7.5
+serumCreatinine=2.1
+gfr=45
+hemoglobin=11.5
+cholesterolTotal=220
+cholesterolLDL=145
+cholesterolHDL=35
+cholesterolTriglycerides=250
+proteinInUrine=3
+acr=55

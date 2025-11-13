@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Risk Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      .lucide { display: inline-block; }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+            <div class="flex items-center mb-6">
+                <i data-lucide="activity" class="w-10 h-10 text-blue-600 mr-3"></i>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">CKD Risk Assessment</h1>
+                    <p class="text-gray-600">Chronic Kidney Disease Prediction Tool</p>
+                </div>
+            </div>
+
+            <form id="upload-form" enctype="multipart/form-data" class="space-y-4">
+                <h3 class="text-lg font-semibold mb-3 text-gray-700">Upload Medical Report (TXT)</h3>
+                <div class="mb-4">
+                    <label for="reportFile" class="block text-sm font-medium text-gray-700 mb-1">
+                        Select .txt Report File
+                    </label>
+                    <input type="file" id="reportFile" name="reportFile" accept=".txt" required
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <p id="error-file" class="text-red-500 text-xs mt-1 hidden"></p>
+                </div>
+                <button
+                    id="upload-button"
+                    type="submit"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 flex items-center justify-center"
+                    onclick="handleFileUpload(event)"
+                >
+                    <i data-lucide="upload" class="w-5 h-5 mr-2"></i>
+                    Upload and Analyze
+                </button>               
+            </form>
+
+            <p id="error-general" class="text-red-500 text-sm mt-3 hidden text-center"></p>
+        </div>
+
+        <div id="results-container" class="bg-white rounded-2xl shadow-xl p-8 hidden">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Analysis Results</h2>
+
+            <div id="summary-card" class="p-6 rounded-xl mb-6">
+                <div class="flex items-center mb-3">
+                    <div id="summary-icon" class="w-8 h-8 mr-3"></div>
+                    <div>
+                        <h3 id="summary-title" class="text-xl font-bold"></h3>
+                        <p class="text-gray-700">
+                            CKD Probability: <span id="probability-display" class="font-bold text-2xl"></span>
+                        </p>
+                    </div>
+                </div>
+                <p id="summary-message" class="text-gray-700 mt-2"></p>
+            </div>
+
+            <div id="risk-factors-section" class="mb-6 hidden">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Identified Risk Factors</h3>
+                <div id="risk-factors-list" class="space-y-3">
+                    </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p class="text-sm text-gray-700">
+                    <strong>Important Note:</strong> This tool provides risk assessment based on clinical parameters. 
+                    It is not a substitute for professional medical diagnosis. Always consult with qualified healthcare 
+                    providers for proper evaluation, diagnosis, and treatment.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function handleFileUpload(event) {
+            event.preventDefault(); 
+            document.getElementById('error-general').classList.add('hidden');
+            document.getElementById('results-container').classList.add('hidden');
+            document.getElementById('error-file').classList.add('hidden');
+
+            const fileInput = document.getElementById('reportFile');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                document.getElementById('error-file').textContent = 'Please select a file.';
+                document.getElementById('error-file').classList.remove('hidden');
+                return;
+            }
+
+            if (file.type !== 'text/plain') {
+                document.getElementById('error-file').textContent = 'Please upload a .txt file.';
+                document.getElementById('error-file').classList.remove('hidden');
+                return;
+            }
+
+            const formData = new FormData(document.getElementById('upload-form'));
+
+            fetch('{% url "predict_ckd_file" %}', { 
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json().then(data => ({ status: response.status, body: data })))
+            .then(res => {
+                if (res.status === 200 && res.body.success) {
+                    displayResults(res.body);
+                } else {
+                    const errorMessage = res.body.error || 'Prediction failed due to an unknown server error.';
+                    document.getElementById('error-general').textContent = errorMessage;
+                    document.getElementById('error-general').classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                console.error('File upload error:', error);
+                document.getElementById('error-general').textContent = 'Could not connect to the prediction service.';
+                document.getElementById('error-general').classList.remove('hidden');
+            });
+        }
+
+        function displayResults(result) {
+            const prediction = result.prediction;
+            const insights = result.insights;
+            const hasCKD = prediction.hasCKD;
+
+            const summaryCard = document.getElementById('summary-card');
+            const summaryIcon = document.getElementById('summary-icon');
+            summaryCard.className = `p-6 rounded-xl mb-6 ${
+                hasCKD ? 'bg-red-50 border-2 border-red-200' : 'bg-green-50 border-2 border-green-200'
+            }`;
+            
+            summaryIcon.innerHTML = '';
+            const iconName = hasCKD ? 'alert-circle' : 'check-circle';
+            const iconColor = hasCKD ? 'text-red-600' : 'text-green-600';
+            summaryIcon.innerHTML = `<i data-lucide="${iconName}" class="w-8 h-8 ${iconColor}"></i>`;
+            lucide.createIcons();
+
+
+            document.getElementById('summary-title').textContent = hasCKD ? 'High Risk Detected' : 'Low Risk';
+            document.getElementById('probability-display').textContent = `${prediction.probability}%`;
+            document.getElementById('summary-message').textContent = hasCKD
+                ? 'The analysis indicates a significant risk of chronic kidney disease. Please consult with a healthcare provider for proper evaluation and treatment.'
+                : 'The analysis shows a low risk of chronic kidney disease. Continue maintaining healthy lifestyle habits.';
+
+            const riskFactorsList = document.getElementById('risk-factors-list');
+            riskFactorsList.innerHTML = ''; 
+            const riskFactorsSection = document.getElementById('risk-factors-section');
+            
+            if (insights.riskFactors.length > 0) {
+                riskFactorsSection.classList.remove('hidden');
+                insights.riskFactors.forEach(risk => {
+                    const severityClass = risk.severity === 'high' ? 'bg-red-50 border-red-500' : 'bg-yellow-50 border-yellow-500';
+                    const iconColorClass = risk.severity === 'high' ? 'text-red-600' : 'text-yellow-600';
+
+                    let iconData = '';
+                    switch(risk.category) {
+                        case 'Hypertension':
+                        case 'High Cholesterol':
+                            iconData = 'heart';
+                            break;
+                        case 'Diabetes':
+                            iconData = 'trending-up';
+                            break;
+                        case 'Kidney Function':
+                        case 'Proteinuria':
+                            iconData = 'droplets';
+                            break;
+                        case 'Anemia':
+                            iconData = 'activity';
+                            break;
+                        default:
+                            iconData = 'alert-triangle';
+                    }
+
+                    const riskHtml = `
+                        <div class="p-4 rounded-lg border-l-4 ${severityClass}">
+                            <div class="flex items-start">
+                                <i data-lucide="${iconData}" class="w-5 h-5 mr-3 mt-1 flex-shrink-0 ${iconColorClass}"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">${risk.category}</h4>
+                                    <p class="text-sm text-gray-700">${risk.message}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    riskFactorsList.insertAdjacentHTML('beforeend', riskHtml);
+                });
+                lucide.createIcons();
+            } else {
+                riskFactorsSection.classList.add('hidden');
+            }
+            
+            lucide.createIcons(); 
+
+            document.getElementById('results-container').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
