@@ -1,0 +1,14 @@
+age=39
+serumCreatinine=4 
+gfr=79  
+hemoglobin=15 
+proteinInUrine=0.0
+systolicBP=122
+diastolicBP=77
+fastingBloodSugar=70
+hbA1c=8.0
+cholesterolTotal=260
+cholesterolLDL=110
+cholesterolHDL=39
+cholesterolTriglycerides=39
+acr=5
