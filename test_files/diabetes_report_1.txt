@@ -1,0 +1,13 @@
+age = 83
+htn = 1  
+dm = 1  
+systolicBP = 117
+diastolicBP = 105
+fasting Blood Sugar = 167
+hbA1c = 10
+cholesterol Total = 243
+cholesterol Triglycerides = 400
+bmi = 28.5
+gender = Male
+familyhistory = No
+

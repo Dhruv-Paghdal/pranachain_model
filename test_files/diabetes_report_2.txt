@@ -1,0 +1,17 @@
+age = 65 
+htn = 0   
+dm = 0    
+systolicBP = 115
+diastolicBP = 75  
+fasting_Blood_Sugar = 110  
+hbA1c = 7
+cholesterol_Total = 180 
+cholesterol_Triglycerides = 180 
+bmi = 24 
+gender = "Female" 
+familyhistory = "No"
+serum_Creatinine = 0.9  # Normalized
+gfr = 110
+acr = 10
+hemoglobin = 15.0
+protein_In_Urine = 0.0

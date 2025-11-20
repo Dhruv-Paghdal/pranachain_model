@@ -1,0 +1,14 @@
+age=55
+serumCreatinine=4.9
+gfr=203
+hemoglobin=15
+proteinInUrine=1
+systolicBP=175
+diastolicBP=100
+fastingBloodSugar=155
+hbA1c=7.4
+cholesterolTotal=230
+cholesterolLDL=99
+cholesterolHDL=50
+cholesterolTriglycerides=138
+acr=280
