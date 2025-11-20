@@ -15,9 +15,9 @@ Each model was developed using the Random Forest algorithm and demonstrates exce
 
 | Prediction Model | Accuracy Rate | Precision Score | Recall Score | F1 Score |
 | :--- | :--- | :--- | :--- | :--- |
-| **Kidney Disease** | 98.9% | 98.0% | 99.7% | 98.8% |
-| **Diabetes** | 98.6% | 99.0% | 99.0% | 99.0% |
-| **Heart Disease** | 92.0% | 92.0% | 92.0% | 92.0% |
+| **Kidney Disease** | 98.0% | 97.0% | 99.0% | 98.3% |
+| **Diabetes** | 92.0% | 90.0% | 93.0% | 93.5% |
+| **Heart Disease** | 88.0% | 89.0% | 90.0% | 86.0% |
 
 ## Technology Stack
 
